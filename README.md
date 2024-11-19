@@ -66,8 +66,27 @@ Answer:
 
 ## Task 6:
 Question 7: explain the use of `useEffect` hook in React
+Answer: The useEffect hook is used to perform side effects in function components. A side effect can include things like data fetching, logging, etc. It runs after every render and can be customized to run on specific conditions.
+
 Question 8: What is A High Order Component?
+Answer: A Higher-Order Component is a pattern in React that allows you to reuse component logic. It is a function that takes a component as an argument and returns a new component with additional functionality or logic.
+
 Question 9: What use cases would a HOC be usefull?
+Answer:
+- Code Reusability
+- Conditionally Rendering Component
+- Manipulating Props
+- Stateful Logic
+
 Question 10: What does it indicate when a component is prefixed with `use` and `with`
+Answer:
+use Prefix: Typically, components or hooks prefixed with use are React hooks (useState, useEffect, useContext)
+with Prefix: Components prefixed with with typically refer to Higher-Order Components (HOCs)
+
 Question 11: What is a Generic type in typescript?
+Answer: A Generic Type in TypeScript allows you to create reusable and flexible components or functions that can work with multiple data types while maintaining type safety
+
 Question 12: Whats the difference between a controlled and uncontrolled input in React?
+Answer:
+Controlled Input: In a controlled input, the form element's value is controlled by the component's state. Every change is handled by React, and the input’s value is bound to a state variable.
+Uncontrolled Input: In an uncontrolled input, the value of the form element is not controlled by React. Instead, the DOM manages the value. React doesn't control the state of the input field directly.
