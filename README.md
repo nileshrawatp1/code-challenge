@@ -59,6 +59,10 @@ commit the code as `task-4`<br>
 ## Task 5:
 Assignment: Create button for each pokémon where an Action will be dispatched to remove the pokémon from the store
 Question 6: How can you verify the action has been dispatched?
+Answer:
+- Using console.log() inside the reducer.
+- Using Redux DevTools extension
+- Using redux-logger Library
 
 ## Task 6:
 Question 7: explain the use of `useEffect` hook in React

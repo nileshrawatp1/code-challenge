@@ -34,8 +34,12 @@ const pokemonSlice = createSlice({
         setIdle(state) {
             state.status = 'idle';
         },
+        removePokemon: (state, action) => {
+            const [name, index] = action.payload.split('-');
+            state.list = state.list.filter((pokemon, i) => pokemon.name !== name || i !== parseInt(index));
+        },
     },
 });
 
-export const {setPokemonList, setLoading, setError, setIdle} = pokemonSlice.actions;
+export const { setPokemonList, setLoading, setError, setIdle, removePokemon } = pokemonSlice.actions;
 export default pokemonSlice.reducer;
