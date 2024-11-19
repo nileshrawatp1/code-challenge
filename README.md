@@ -3,7 +3,7 @@
 ## Introduction:
 Welcome to the React Developer Technical Assessment! This test is designed to evaluate your proficiency in building React applications using a modern stack, including Redux Toolkit, Vite, React Router and TurboRepo. We have prepared a set of tasks and questions that cover a spectrum of skills, ranging from fundamental concepts to more advanced topics.
 
-### Tasks: 
+### Tasks:
 Complete the provided tasks to demonstrate your ability to work with React, Redux Toolkit, Vite, and TurboRepo. Adjust the complexity based on your experience level.
 
 ### Questions:
@@ -23,13 +23,16 @@ Start the test by Forking this repository, and complete the following tasks:<br>
 ## Task 1:
 Assignment: Use the `api` found in `App.tsx` to make a request and fetch a list of all Pokémon.<br>
 Question 1: How did you manage to fetch the list and what tool did you use?<br>
+Answer: I have used javascript fetch API to fetch the list of Pokemons.
+
 Question 2: What steps would you take to future improve this?<br>
+Answer: We can wrap the fetch API call to an async function and then we can apply try catch method for error handlings.
 
 commit the code as `task-1`<br>
 
 ## Task 2:
 Assignment: Parse the list to the `<List />` component and ajust the component to show a list of all pokémon names
-Feel free to create more components in the `/ui` package or in the app if needed 
+Feel free to create more components in the `/ui` package or in the app if needed
 
 commit the code as `task-2`<br>
 
@@ -46,7 +49,7 @@ Question 5: Describe the benefits of immutable code.<br>
 commit the code as `task-4`<br>
 
 ## Task 5:
-Assignment: Create button for each pokémon where an Action will be dispatched to remove the pokémon from the store 
+Assignment: Create button for each pokémon where an Action will be dispatched to remove the pokémon from the store
 Question 6: How can you verify the action has been dispatched?
 
 ## Task 6:
@@ -56,8 +59,3 @@ Question 9: What use cases would a HOC be usefull?
 Question 10: What does it indicate when a component is prefixed with `use` and `with`
 Question 11: What is a Generic type in typescript?
 Question 12: Whats the difference between a controlled and uncontrolled input in React?
-
-
-
-
-
