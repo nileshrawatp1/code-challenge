@@ -1,37 +1,37 @@
 import { List } from 'ui'
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { setPokemonList, setLoading, setError, setIdle } from './redux/pokemonSlice';
+import { RootState } from './redux/store'
 
 const App = () => {
 
-    const [list, setList] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const dispatch = useDispatch();
+
+    const { list, status, error } = useSelector((state: RootState) => state.pokemon);
+
 
     useEffect(() => {
+        dispatch(setLoading());
         const api = "https://pokeapi.co/api/v2/pokemon?limit=151"
         fetch(api)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("Failed To Fetch Pokemon");
-                }
-                return response.json()
-            })
+            .then((response) => response.json())
             .then((data) => {
-                setList(data.results);
-                setLoading(false)
+                dispatch(setPokemonList(data.results));
+                dispatch(setIdle());
             })
             .catch((error) => {
-                setError(error.message);
-                setLoading(false)
+                dispatch(setError(error.message));
+                dispatch(setIdle());
             })
-    }, [])
+    }, [dispatch])
 
     return (
         <>
             <h1>Pokemon list:</h1>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            {!loading && !error && <List data={list} />}
+            {status === 'loading' && <p>Loading...</p>}
+            {status === 'failed' && <p>Error: {error}</p>}
+            {status === 'idle' && <List data={list} />}
 
         </>
     )
